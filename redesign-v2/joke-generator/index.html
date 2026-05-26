@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke Generator</title>
+    <link rel="stylesheet" href="joke-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>
+                <i class="fas fa-laugh-squint"></i>
+                Joke Generator
+            </h1>
+            <p>Get a random laugh every day!</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Joke Display Card -->
+            <div class="joke-card">
+                <div class="joke-content">
+                    <div class="joke-type-badge">
+                        <span id="jokeType">Loading...</span>
+                    </div>
+                    <p id="jokeText" class="joke-text">
+                        <i class="fas fa-spinner fa-spin"></i> Loading joke...
+                    </p>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button id="getJokeBtn" class="btn btn-primary" placeholder="Generate new joke">
+                    <i class="fas fa-bolt"></i>
+                    Get New Joke
+                </button>
+                
+                <button id="copyBtn" class="btn btn-secondary" placeholder="Copy joke to clipboard">
+                    <i class="fas fa-copy"></i>
+                    Copy
+                </button>
+
+                <button id="shareBtn" class="btn btn-secondary" placeholder="Share joke">
+                    <i class="fas fa-share-alt"></i>
+                    Share
+                </button>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="category-section">
+                <h3>Select Category (Optional)</h3>
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="any" placeholder="Get any joke">
+                        <i class="fas fa-random"></i> Any
+                    </button>
+                    <button class="category-btn" data-category="general" placeholder="Get general joke">
+                        <i class="fas fa-smile"></i> General
+                    </button>
+                    <button class="category-btn" data-category="programming" placeholder="Get programming joke">
+                        <i class="fas fa-code"></i> Programming
+                    </button>
+                    <button class="category-btn" data-category="knock-knock" placeholder="Get knock-knock joke">
+                        <i class="fas fa-door-open"></i> Knock-Knock
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Jokes Loaded:</span>
+                    <span id="jokeCount" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">API Status:</span>
+                    <span id="apiStatus" class="stat-value status-online">
+                        <i class="fas fa-circle"></i> Online
+                    </span>
+                </div>
+            </div>
+
+            <!-- Joke History -->
+            <div class="history-section">
+                <h3>
+                    <i class="fas fa-history"></i>
+                    Recent Jokes
+                </h3>
+                <div id="historyList" class="history-list">
+                    <p class="empty-message">No jokes yet. Get one to start!</p>
+                </div>
+                <button id="clearHistoryBtn" class="btn btn-small" placeholder="Clear joke history">
+                    Clear History
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by <a href="https://official-joke-api.appspot.com/" target="_blank">Official Joke API</a></p>
+            <p><small>Made with <i class="fas fa-heart"></i> for laughs</small></p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="joke-script.js"></script>
+</body>
+</html>
